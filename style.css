@@ -5,29 +5,125 @@
 
 .container{
     margin: auto; 
-    width: 50%;
+    width: 30%;
+    height: 600px;
+    /*grid-template-rows: repeat(14, 43px);
+    grid-template-columns: repeat(8, 57px);*/
+    grid-template-rows: repeat(75, auto);
+    grid-template-columns: repeat(50, auto);
+
     border: green 1px solid; 
     display: grid; 
     justify-items: stretch;
     align-items: stretch;
-    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
-    grid-template-rows: repeat(8, 100px [row-start]); 
-    column-gap: 10px;
-    row-gap: 10px;
-    /*grid-template-columns: [first] 25% [row1-end] auto [line3] 10% [col4-start] 10% [end];*/
-    /*grid-template-columns:repeat(50, 30px [col-start]);*/
-    /*grid-template-columns: 1fr 5fr 1fr;
-    /*grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];*/
-   /* grid-template-rows: [row1] 90px [row2] 90px [row3] 90px [row4] 90px [row5] 90px [row6] 90px [row7] 90px[end];
-    grid-template-areas: 
-    ". header reference"
-    ". header reference"
-    ". header reference";*/
 }
-.item-a {
-    grid-column-start: 2;
-    grid-column-end: five;
-    grid-row-start: row1-start;
-    grid-row-end: 3;
-    background-color: orange;
+
+.numbers{
+    background-color: rgb(130, 166, 209); 
+    text-align: center;
+    font-family: 'Lucida Sans';
+    font-size: x-large;
+    font-weight: 200;
+}
+
+.operands{
+    background-color: rgb(206, 86, 86);
+    text-align: center;
+    font-family: 'Lucida Sans';
+    font-size: x-large;
+    font-weight: 200;
+}
+
+.result{
+   grid-area: 3 / 2 / 14 / 50; 
+   background-color: rgb(72, 203, 159);
+   font-family: 'Lucida Sans';
+   font-size: x-large;
+   font-weight: 200;
+}
+
+
+
+#seven{
+    grid-area: 17 / 2 / 25 / 10;    
+}
+
+#eight{
+    grid-area: 17 / 12 / 25 / 20;   
+}
+
+#nine{
+    grid-area: 17 / 22 / 25 / 30;  
+}
+
+#plus{
+    grid-area: 17 / 32 / 25 / 40;  
+}
+
+#minus{
+    grid-area: 17 / 42 / 25 / 50;  
+}
+
+#four{
+    grid-area: 28 / 2 / 36 / 10;  
+}
+
+#five{
+    grid-area: 28 / 12 / 36 / 20;  
+}
+
+#six{
+    grid-area: 28 / 22 / 36 / 30;  
+}
+
+#multiply{
+    grid-area: 28 / 32 / 36 / 40;  
+}
+
+#divide{
+    grid-area: 28 / 42 / 36 / 50;  
+}
+
+#one{
+    grid-area: 39 / 2 / 47 / 10;  
+}
+
+#two{
+    grid-area: 39 / 12 / 47 / 20;  
+}
+
+#three{
+    grid-area: 39 / 22 / 47 / 30;  
+}
+
+#pi{
+    grid-area: 39 / 32 / 47 / 40;  
+}
+
+#squared{
+    grid-area: 39 / 42 / 47 / 50;  
+}
+
+#zero{
+    grid-area: 50 / 2 / 58 / 10;  
+}
+
+#ans{
+    grid-area: 50 / 12 / 58 / 30;  
+}
+
+#square-root{
+    grid-area: 50 / 32 / 58 / 50;  
+}
+
+#clear{
+    grid-area: 61 / 2 / 69 / 10; 
+}
+
+#decimal{
+    grid-area: 61 / 12 / 69 / 20;
+}
+
+#equal{
+    grid-area: 61 / 22 / 69 / 50;  
 }
