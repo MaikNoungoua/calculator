@@ -1,129 +1,72 @@
-/*#main{
-    border: solid black 1px;
-    border-radius: 3px;
-}*/
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1000px;
+
+}
 
 .container{
     margin: auto; 
-    width: 30%;
-    height: 600px;
-    /*grid-template-rows: repeat(14, 43px);
-    grid-template-columns: repeat(8, 57px);*/
-    grid-template-rows: repeat(75, auto);
-    grid-template-columns: repeat(50, auto);
-
+    width: 400px;
+    height: 500px;
     border: green 1px solid; 
-    display: grid; 
-    justify-items: stretch;
-    align-items: stretch;
+    background-color: pink;
+
 }
 
-.numbers{
-    background-color: rgb(130, 166, 209); 
+#result{
+    height: 100px;
+    border: rgb(0, 0, 0) 2px solid;
+    border-radius: 2px;
+    margin: auto;
+    width: 96%;
+    margin-top: 5px;
+    font-family: monospace;
+    font-size: xx-large;
+    font-weight: 500;
+    background: linear-gradient(to bottom right, rgb(162, 230, 238), rgba(99, 110, 121, 0.113))
+    
+}
+
+.buttons-container{
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 97%;
+    justify-content: space-evenly;
+}
+
+.buttons{
+    height: 93px;
+    width: 93px;
+    border: black 2px solid;
+    border-radius: 2px;
+    align-content: center;
     text-align: center;
-    font-family: 'Lucida Sans';
-    font-size: x-large;
-    font-weight: 200;
+    font-family: monospace;
+    font-size: xx-large;
+    font-weight: 500;
+    background: linear-gradient(to right, rgba(237, 234, 234, 0.322), rgba(86, 131, 236, 0.438));
 }
 
-.operands{
-    background-color: rgb(206, 86, 86);
-    text-align: center;
-    font-family: 'Lucida Sans';
-    font-size: x-large;
-    font-weight: 200;
+div#plus.buttons{
+    background-color: rgb(204, 16, 85);
 }
 
-.result{
-   grid-area: 3 / 2 / 14 / 50; 
-   background-color: rgb(72, 203, 159);
-   font-family: 'Lucida Sans';
-   font-size: x-large;
-   font-weight: 200;
+div#minus.buttons{
+    background-color: rgb(204, 16, 85);
 }
 
-
-
-#seven{
-    grid-area: 17 / 2 / 25 / 10;    
+div#divide.buttons{
+    background-color: rgb(204, 16, 85);
 }
 
-#eight{
-    grid-area: 17 / 12 / 25 / 20;   
+div#multiply.buttons{
+    background-color: rgb(204, 16, 85);
 }
 
-#nine{
-    grid-area: 17 / 22 / 25 / 30;  
-}
-
-#plus{
-    grid-area: 17 / 32 / 25 / 40;  
-}
-
-#minus{
-    grid-area: 17 / 42 / 25 / 50;  
-}
-
-#four{
-    grid-area: 28 / 2 / 36 / 10;  
-}
-
-#five{
-    grid-area: 28 / 12 / 36 / 20;  
-}
-
-#six{
-    grid-area: 28 / 22 / 36 / 30;  
-}
-
-#multiply{
-    grid-area: 28 / 32 / 36 / 40;  
-}
-
-#divide{
-    grid-area: 28 / 42 / 36 / 50;  
-}
-
-#one{
-    grid-area: 39 / 2 / 47 / 10;  
-}
-
-#two{
-    grid-area: 39 / 12 / 47 / 20;  
-}
-
-#three{
-    grid-area: 39 / 22 / 47 / 30;  
-}
-
-#pi{
-    grid-area: 39 / 32 / 47 / 40;  
-}
-
-#squared{
-    grid-area: 39 / 42 / 47 / 50;  
-}
-
-#zero{
-    grid-area: 50 / 2 / 58 / 10;  
-}
-
-#ans{
-    grid-area: 50 / 12 / 58 / 30;  
-}
-
-#square-root{
-    grid-area: 50 / 32 / 58 / 50;  
-}
-
-#clear{
-    grid-area: 61 / 2 / 69 / 10; 
-}
-
-#decimal{
-    grid-area: 61 / 12 / 69 / 20;
-}
-
-#equal{
-    grid-area: 61 / 22 / 69 / 50;  
+div#clear.buttons{
+    background-color: rgb(204, 16, 85);
 }

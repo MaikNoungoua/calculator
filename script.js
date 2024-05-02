@@ -32,7 +32,7 @@
  let operandContainer = [];
  let flag = [];
 
- const screen = document.getElementById("screen");
+ const screen = document.getElementById("result");
 
 
  // storing frontend number element inside variables and giving it an event listener at the same time  
@@ -128,18 +128,9 @@
     operandContainer = [];
     operandCreator = '';
     flag = [];
-    console.log(operandContainer);
-    console.log(operandCreator); 
-    console.log(flag);
     screen.textContent = '';
-
-
  });
- const decimal = document.getElementById("decimal").addEventListener("click", () => {alert("It works mate!!!")});
- const ans = document.getElementById("ans").addEventListener("click", () => {alert("It works mate!!!")});
- const sqareRoot = document.getElementById("square-root").addEventListener("click", () => {alert("It works mate!!!")});
- const pi = document.getElementById("pi").addEventListener("click", () => {alert("It works mate!!!")});
- //const squared = document.getElementById("x2").addEventListener("click", () => {alert("It works mate!!!")});
+
  
  const equal = document.getElementById("equal").addEventListener("click",() => {
     if (flag == 'substract'){
