@@ -51,9 +51,15 @@ body{
     background: linear-gradient(to right, rgba(237, 234, 234, 0.322), rgba(86, 131, 236, 0.438));
 }
 
+.buttons:hover{
+    /*background-color: rgba(70, 107, 192, 0.274);*/
+    border: solid rgba(86, 131, 236, 0.438);
+}
+
 div#plus.buttons{
     background-color: rgb(204, 16, 85);
 }
+
 
 div#minus.buttons{
     background-color: rgb(204, 16, 85);
