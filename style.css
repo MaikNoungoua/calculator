@@ -53,7 +53,7 @@ body{
 
 .buttons:hover{
     /*background-color: rgba(70, 107, 192, 0.274);*/
-    border: solid rgba(86, 131, 236, 0.438);
+    border: solid rgba(86, 131, 236, 0.438) 1px;
     height: 93px;
     width: 93px;
     align-content: center;

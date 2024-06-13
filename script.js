@@ -91,7 +91,7 @@
  // Storing frontend operands elements inside variables and giving it an event listener at the same time
 
  const plus = document.getElementById("plus").addEventListener("click", () => {
-    screen.textContent = '+';
+    screen.textContent = operandCreator +'+';
     operandContainer.push(Math.floor(operandCreator)); 
     operandCreator = [];
     console.log(operandContainer);
