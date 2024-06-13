@@ -54,6 +54,13 @@ body{
 .buttons:hover{
     /*background-color: rgba(70, 107, 192, 0.274);*/
     border: solid rgba(86, 131, 236, 0.438);
+    height: 93px;
+    width: 93px;
+    align-content: center;
+    text-align: center;
+    font-family: monospace;
+    font-size: xx-large;
+    font-weight: 500;
 }
 
 div#plus.buttons{

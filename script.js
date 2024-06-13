@@ -161,7 +161,28 @@
     }
  });
 
+ function calculator (){
+  // calculatorFlag = ; 
+   //calculatorOperand = ; 
+   
+ }
 
+
+ //We are using a fucntion because it will make the code more readable by simply calling it at the 
+ //end of each event listener 
+
+ //we need the creation of a function that checks operandCOntainer's length: 
+   // if > 2 we perform the operation and stores the results as the first ooperand for the next set of calculation. 
+
+// of course this imply that the flag system that we implemented will really take effect here. Probably jsut having a single variable that check the value of the flag 
+// assigns a operation to it and reset it to zero.
+
+//Architecture of the function: 
+
+      //evaluate the operandCOntainer's length
+      //check the flag that has been set 
+      //calls one of: add, multiply, susbstract, divide based on the flag and the value of operandCOntainer[0] and operandCOntainer[1]
+      // shows the result sequentially, everytime one of the operand is pressed we have the result display on the screen. 
  
 
 
