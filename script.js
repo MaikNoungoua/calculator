@@ -20,17 +20,10 @@
     return result;
  }
 
- sum = function(array) { 
-    result = 0; 
-    for (index in array) {
-        result += array[index];
-    }
-    return result
- }
-
  let operandCreator = ''; 
- let operandContainer = [];
  let flag = [];
+ let calculationString = [];
+ let intermediateFlag = '';
 
  const screen = document.getElementById("result");
 
@@ -91,37 +84,28 @@
  // Storing frontend operands elements inside variables and giving it an event listener at the same time
 
  const plus = document.getElementById("plus").addEventListener("click", () => {
-    screen.textContent = operandCreator +'+';
-    operandContainer.push(Math.floor(operandCreator)); 
-    operandCreator = [];
-    console.log(operandContainer);
-    flag = 'add';
-
-    
+   operandCreator += ' + ';
+    screen.textContent = operandCreator;
+    flag = '+';  
     
  });
  const minus = document.getElementById("minus").addEventListener("click", () => {
-    screen.textContent = '-';
-    operandContainer.push(Math.floor(operandCreator));
-    operandCreator = [];
-    console.log(operandContainer);
-    flag = 'substract'
+   operandCreator += ' - ';
+    //operandContainer.push(Math.floor(operandCreator));
+    screen.textContent = operandCreator;
+    flag = '-';
 
  });
  const multiplication = document.getElementById("multiply").addEventListener("click", () => {
-    screen.textContent = 'x'; 
-    operandContainer.push(Math.floor(operandCreator));
-    operandCreator = [];
-    console.log(operandContainer);
-    flag = 'multiplication';
+    operandCreator += ' x '; 
+    screen.textContent = operandCreator
+    flag = 'x';
  });
 
  const division = document.getElementById("divide").addEventListener("click", () => {
-    screen.textContent = '/'; 
-    operandContainer.push(Math.floor(operandCreator)); 
-    operandCreator = []; 
-    console.log(operandContainer); 
-    flag = 'division';
+   operandCreator += ' / '; 
+   screen.textContent = operandCreator
+   flag = '/';
  });
  
  const clear = document.getElementById("clear").addEventListener("click", () => {
@@ -131,39 +115,101 @@
     screen.textContent = '';
  });
 
+ function checkFlag (flag, operand1, operand2){
+
+   console.log(flag);
+
+   switch (flag){
+      case '+':
+         result = add(Math.floor(operand1),Math.floor(operand2));
+         console.log(result);
+         return result
+      
+      case '-':
+         result = substract(Math.floor(operand1),Math.floor(operand2));
+         return result
+
+      case 'x':
+         result = multiply(Math.floor(operand1),Math.floor(operand2));
+         return result
+
+      case '/':
+         result = divide(Math.floor(operand1),Math.floor(operand2));
+         return result
+
+      
+
+
+   
+   }
+   
+ }
+
+ function stringEvaluation (stringToEval){
+   let intermediaryResult = 0;
+   let splitString = stringToEval.split(" ");
+   console.log(splitString);
+   let elementInSplitString = splitString.length;
+   console.log(`this is elementInString ${elementInSplitString}`);
+
+
+   for (let i = 0; i < elementInSplitString; i++){
+      console.log("within the for loop");
+      console.log(splitString);
+      console.log(`this is split string length ${splitString.length}`)
+      if (splitString.length == 1){
+         break;
+      }
+      else{
+         intermediaryResult = checkFlag(splitString[1], splitString[0], splitString[2]);
+         console.log(intermediaryResult);
+         splitString.splice(0,3); //where we start and how many item we want to get rid of;
+         console.log(`this is  split string after splice ${splitString}`);
+         console.log(splitString);
+         splitString.unshift(intermediaryResult);
+         console.log(`this is  split string after pushing intermediaryResult ${splitString}`);
+         console.log(splitString);
+      }
+      }
+      
+     
+
+   } 
+  
+
  
  const equal = document.getElementById("equal").addEventListener("click",() => {
-    if (flag == 'substract'){
-        operandContainer.push(Math.floor(operandCreator)); 
-        let result = substract(operandContainer[0], operandContainer[1]);
-        screen.textContent = result; 
-    }
-    if (flag == 'multiplication'){
-        operandContainer.push(Math.floor(operandCreator)); 
-        let result = multiply(operandContainer[0], operandContainer[1]);
-        screen.textContent = result;
-    }  
-    if (flag == 'division') {
-        operandContainer.push(Math.floor(operandCreator)); 
-        let result = divide(operandContainer[0], operandContainer[1]);
-        screen.textContent = result.toFixed(3); 
-    }
-    if (flag == 'add'){
-        operandContainer.push(Math.floor(operandCreator)); 
-        if (operandContainer.length > 2) {
-            //operandContainer.push(Math.floor(operandCreator)); 
-            screen.textContent = sum(operandContainer); 
-        }
-        else{
-            //operandContainer.push(Math.floor(operandCreator)); 
-            let result = add(operandContainer[0], operandContainer[1]);
-            screen.textContent = result; }
-    }
+    stringEvaluation(operandCreator);
+    screen.textContent = result;
+   
  });
 
- function calculator (){
-  // calculatorFlag = ; 
-   //calculatorOperand = ; 
+ function partialEval (){
+   calculationString.push(Math.floor(operandCreator));
+   calculationString.push(flag);
+   screen.textContent = `${calculationString[0]}${calculationString[1]}`;
+   operandCreator = '';
+   flag = '';
+   console.log(calculationString);
+
+   if (calculationString.length = 3) {
+      intermediateFlag = calculationString[1];
+      console.log(intermediateFlag)
+      let result = 0;
+      switch (intermediateFlag) {
+         case '+':
+            result = add(Math.floor(calculationString[0]),Math.floor(calculationString[2]));
+            console.log(result);
+            screen.textContent = result; 
+            break;
+         
+         case '-':
+            result = substract(calculationString[0],calculationString[2]);
+            screen.textContent = result;
+
+
+      }
+   }
    
  }
 
