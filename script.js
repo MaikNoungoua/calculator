@@ -181,6 +181,10 @@
  const equal = document.getElementById("equal").addEventListener("click",() => {
     stringEvaluation(operandCreator);
     screen.textContent = result;
+    operandContainer = [];
+    operandCreator = '';
+    flag = [];
+
    
  });
 
